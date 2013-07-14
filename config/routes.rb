@@ -1,4 +1,8 @@
 Pulse::Application.routes.draw do
+
+  root :to => 'lecture#index'  
+  resources :users, :lectures
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
