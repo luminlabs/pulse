@@ -1,7 +1,9 @@
 Pulse::Application.routes.draw do
 
-  root :to => 'lecture#index'  
+  root :to => 'lectures#index'  
+  get '/current', :controller => 'students', :action => 'status'
   resources :users, :lectures
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

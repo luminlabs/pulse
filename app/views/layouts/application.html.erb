@@ -8,6 +8,24 @@
 </head>
 <body>
 
+
+
+
+    <nav id="navigation">
+      <ul class="left">
+        <li  id="logo"><a href="/"><img alt="General Assembly Logo" id="logo" src="/assets/pulse-logo.png"  /></a></li>
+      </ul>
+      <ul id="menu"> 
+	      
+	        <li class="menu-item"><%= link_to "Lectures", lectures_path %></li>
+	    
+	        <li class="menu-item"><%= link_to "Sign-out", lectures_path %></li>
+	 </ul>
+
+    
+    </nav>
+
+
 <%= yield %>
 
 </body>

@@ -1,0 +1,17 @@
+<div class="content">
+
+<div class='spacer'></div>
+
+<ol>
+<br>
+<% @lectures.each do |lecture| %>
+  <li>
+    <ul>
+      <li><%= link_to(lecture.title, lecture) %></li>
+
+    </ul>
+  </li>
+<% end %>
+</ol>
+<%= button_to('New Lecture', new_lecture_path, :method=>:get) %>
+</div>

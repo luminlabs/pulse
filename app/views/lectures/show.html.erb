@@ -1,0 +1,11 @@
+<div class="content">
+
+<h3><%= @lecture.title %></h3>
+  
+
+ <%= button_to('Edit Lecture', edit_lecture_path(@lecture), :method => :get, :class => "form-element" ) %>
+ <%= button_to('Delete Lecture', @lecture, :method => :delete, :confirm => 'Are you sure?', :class => "form-element") %>
+</div>
+
+
+ 
