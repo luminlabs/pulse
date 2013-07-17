@@ -1,14 +1,13 @@
 <div class="content">
-
+Active Lectures:
 <ol>
 <br>
 <% @lectures.each do |lecture| %>
   <li>
     <ul>
      
-      <li><%= link_to(lecture.title, lecture) %></li>
-
-    </ul>
+      	<li><%= link_to(lecture.title, lecture) %></li>
+	 </ul>
   </li>
 <% end %>
 </ol>
