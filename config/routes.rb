@@ -1,13 +1,12 @@
 Pulse::Application.routes.draw do
+ 
 
   devise_for :users
-
-  devise_for :models
 
   root :to => 'lectures#index'  
   get '/current', :controller => 'lectures', :action => 'show'
   get '/dashboard', :controller => 'lectures', :action => 'dashboard'
-  resources :users, :lectures
+  resources :lectures
 
 
   # The priority is based upon order of creation:

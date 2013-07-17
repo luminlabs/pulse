@@ -1,15 +1,38 @@
 <div class="content">
-Active Lectures:
-<ol>
-<br>
-<% @lectures.each do |lecture| %>
-  <li>
-    <ul>
-     
-      	<li><%= link_to(lecture.title, lecture) %></li>
-	 </ul>
-  </li>
-<% end %>
-</ol>
-<%= button_to('New Lecture', new_lecture_path, :method=>:get) %>
+
+</div>
+
+
+
+ <div class="row">    
+
+   <div class="large-3 pull-9 columns" id="sidebar">
+        
+
+      		<%= button_to('New Lecture', new_lecture_path, :class=>:'button black', :method=>:get) %>
+		         
+        
+    </div>
+
+
+    <div class="large-9 push-3 columns">
+		     
+		Active Lectures:
+		<ol>
+		<br>
+		<% @lectures.each do |lecture| %>
+		  <li>
+		    <ul>
+		     
+		      	<li><%= link_to(lecture.title, lecture) %></li>
+
+
+			 </ul>
+		  </li>
+		<% end %>
+		</ol>
+
+    </div>
+
+	  		
 </div>

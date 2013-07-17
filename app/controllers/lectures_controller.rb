@@ -26,6 +26,6 @@ class LecturesController < ApplicationController
     redirect_to(lectures_path)
   end
   def dashboard
-
+     @lecture = Lecture.last
   end
 end

@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Pulse::Application.config.secret_token = '8b9634bfb973145bf8ece35b73f94f558227581720c518fce7edae0e7f007223e7d9c0815deb4629950a1a4e91b5374d050b387a86b09bd7b95c7132fa267df3'
+Pulse::Application.config.secret_token = '1fc7f7c0a158098079c924b9dc5676038c76befe1ec21bce72579583c470ae84b88255cb6c793d4de7198109ea564da78826493de2ee41ee1f59f01e359dfd61'

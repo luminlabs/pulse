@@ -12,9 +12,22 @@
  *= require foundation
  *= require_tree .
  */
+*{
 
+	font-family: "News706BT-RomanC",Georgia;
+	color:black;
 
+}
 
+a {
+	color:black;
+}
+
+input {
+	display:inline-block;
+	max-width: 350px;
+	
+}
 
 
 #logo {
@@ -36,6 +49,14 @@
 .button.selected {
 
 	background-color: red;
+    opacity: 1; 
+
+} 
+
+.button.black {
+
+	background-color: black;
+	width: 150px;
     opacity: 1; 
 
 } 

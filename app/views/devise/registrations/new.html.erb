@@ -1,18 +1,36 @@
-<h2>Sign up</h2>
+
+ <div class="row">    
+
+   <div class="large-3 pull-9 columns" id="sidebar">
+        
+    </div>
+
+    <div class="large-9 push-3 columns">
+
+<h2>Join Your Classroom Community</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  <div >
+  <%= f.label :name%>:
+  <%= f.text_field :name, :autofocus => true,display:"inline" %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div><%= f.label :email %>:
+  <%= f.email_field :email, :autofocus => true,:display => "inline" %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :password %>
   <%= f.password_field :password %></div>
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.label :linkedin %><br />
+  <%= f.text_field :linkedin %></div>
+
+  <div><%= f.submit "Sign up", :class => "button black"%></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+</div>
