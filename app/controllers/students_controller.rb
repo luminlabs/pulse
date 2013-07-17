@@ -31,9 +31,9 @@ class StudentsController < ApplicationController
 
 	def setstatus
 	
-		if params[:got_it_button] {
-
-		}
+		if params[:got_it_button] 
+			puts "Hello"			
+		end
 
 	end
 

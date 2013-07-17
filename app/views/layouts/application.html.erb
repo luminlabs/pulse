@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Pulse</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -7,11 +8,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!--        <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p> -->
 
+  <div class="row" id="navbar">
+    <div class="large-3 columns" >
+      <h1><img alt="General Assembly Logo" id="logo" src="/assets/pulse-logo.png"  /></h1>
+    </div>
+    <div class="large-9 columns" id="navbar">
+      <ul class="inline-list right">
+          <li class="menu-item"><%= link_to "Lectures", lectures_path %></li>
+          <li class="menu-item"><%= link_to "Sign-out", lectures_path %></li>
+      </ul>
+    </div>
+  </div>
+  
 
-
-
-    <nav id="navigation">
+  <!--   <nav id="navigation">
       <ul class="left">
         <li  id="logo"><a href="/"><img alt="General Assembly Logo" id="logo" src="/assets/pulse-logo.png"  /></a></li>
       </ul>
@@ -23,10 +36,27 @@
 	 </ul>
 
     
-    </nav>
+    </nav> -->
 
 
 <%= yield %>
-
+ <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Section 1</a></li>
+            <li><a href="#">Section 2</a></li>
+            <li><a href="#">Section 3</a></li>
+            <li><a href="#">Section 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
 </body>
 </html>

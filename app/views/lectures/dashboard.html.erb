@@ -1,0 +1,65 @@
+<br><br>
+
+  <div class="row">    
+
+   <div class="large-3 pull-9 columns" id="sidebar">
+        
+      <ul class="side-nav">
+        <h4> My Status: </h4>
+
+	        <%= button_tag 'Got it! Ready for next topic.', :name => 'got_it_button', :id=>"gotit_button" %><br><br>
+	        <%= button_tag "Following you but want \nmore depth.", :name => 'on_track_button', :id=>"following_button" %><br><br>
+	        <%= button_tag 'Not getting it. ', :name => 'preview_button', :id=>"not_getting_button" %><br><br>
+      
+      </ul>
+      
+        
+    </div>
+
+ <!--  <div class="row">
+	   <div class="large-3 pull-9 columns">
+        Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1 Testing area 1
+      <ul class="side-nav">
+        <li><a href="#">Section 1</a></li>
+        <li><a href="#">Section 2</a></li>
+        <li><a href="#">Section 3</a></li>
+        <li><a href="#">Section 4</a></li>
+        <li><a href="#">Section 5</a></li>
+        <!-- <li> <%= button_to('Edit Lecture', edit_lecture_path(@lecture), :method => :get, :class => "form-element" ) %></li> -->
+	     	<!-- <li><%= button_to('Delete Lecture', @lecture, :method => :delete, :confirm => 'Are you sure?', :class => "form-element") %></li> -->
+      <!-- </ul>
+        
+    </div>
+    
+  </div -->
+
+    
+    <!-- Main Content Section -->
+    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+    <div class="large-9 push-3 columns">
+      
+       <h3><%= @lecture.title %></h3>
+
+
+      		<%=
+			    require 'rubygems'
+			require 'rubyvis'
+			vis = Rubyvis::Panel.new do 
+			  width 150
+			  height 150
+			  bar do
+			    data [1, 1.2, 1.7, 1.5, 0.7, 0.3]
+			    width 20
+			    height {|d| d * 80}
+			    bottom(0)
+			    left {index * 25}
+			  end
+			end
+			vis.render()
+			puts vis.to_svg # Output final SVG
+            %>
+    </div>
+
+	  		
+</div>
+	 

@@ -1,12 +1,11 @@
 <div class="content">
 
-<div class='spacer'></div>
-
 <ol>
 <br>
 <% @lectures.each do |lecture| %>
   <li>
     <ul>
+     
       <li><%= link_to(lecture.title, lecture) %></li>
 
     </ul>

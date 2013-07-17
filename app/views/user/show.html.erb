@@ -1,10 +1,10 @@
 <div class="content">
 
-<h3><%= @student.name %></h3>
+<h3><%= @user.name %></h3>
   
 
- <%= button_to('Edit User', edit_student_path(@student), :method => :get, :class => "form-element" ) %>
- <%= button_to('Delete User', @student, :method => :delete, :confirm => 'Are you sure?', :class => "form-element") %>
+ <%= button_to('Edit User', edit_user_path(@user), :method => :get, :class => "form-element" ) %>
+ <%= button_to('Delete User', @user, :method => :delete, :confirm => 'Are you sure?', :class => "form-element") %>
 </div>
 
 

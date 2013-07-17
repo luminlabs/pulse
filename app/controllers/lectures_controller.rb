@@ -25,4 +25,7 @@ class LecturesController < ApplicationController
     lecture.delete
     redirect_to(lectures_path)
   end
+  def dashboard
+
+  end
 end
