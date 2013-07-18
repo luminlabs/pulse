@@ -4,8 +4,8 @@ class CreateUsers < ActiveRecord::Migration
     	t.string :name
     	t.string :twitter
     	t.string :linkedin
-    	t.integer :currentstatus 
-    	t.boolean :instructor
+    	t.integer :currentstatus , :default => 0
+    	t.boolean :instructor, :default => false
       t.timestamps
     end
   end

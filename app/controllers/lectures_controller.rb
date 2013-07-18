@@ -26,9 +26,13 @@ class LecturesController < ApplicationController
     redirect_to(lectures_path)
   end
 
+  def statusmap
+        @status_map = { "not_getting_button" => 1, "on_track_button" => 2, "got_it_button" => 3 }
+  end
+
   def updatestatus
-      # puts params.inspect
-      # a = @user.new
+     
+       current_user.status = statusmap[params[:notice]]
       # a.status = params[:notice]
       # flash.now[:notice] = "Updated Status"
 
