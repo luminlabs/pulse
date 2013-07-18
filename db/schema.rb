@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(:version => 20130718152422) do
   add_index "models", ["reset_password_token"], :name => "index_models_on_reset_password_token", :unique => true
 
   create_table "rosters", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "lecture_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
