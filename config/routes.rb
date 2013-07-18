@@ -6,6 +6,7 @@ Pulse::Application.routes.draw do
   root :to => 'lectures#index'  
   get '/current', :controller => 'lectures', :action => 'show'
   get '/dashboard', :controller => 'lectures', :action => 'dashboard'
+  post '/update', :controller => 'lectures', :action => 'updatestatus'
   resources :lectures
 
 

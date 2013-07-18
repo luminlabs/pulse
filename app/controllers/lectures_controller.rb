@@ -25,6 +25,20 @@ class LecturesController < ApplicationController
     lecture.delete
     redirect_to(lectures_path)
   end
+
+  def updatestatus
+      # puts params.inspect
+      # a = @user.new
+      # a.status = params[:notice]
+      # flash.now[:notice] = "Updated Status"
+
+      respond_to do |format|
+      format.html
+     # format.json  { render :json => @user}
+      end
+
+  end
+
   def dashboard
      @lecture = Lecture.last
   end

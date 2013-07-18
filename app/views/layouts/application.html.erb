@@ -15,7 +15,7 @@
     </div>
     <div class="large-9 columns" id="navbar">
       <ul class="inline-list right">
-
+        
            <% if current_user %>
               <li class="menu-item">Hello <%= current_user.email %>!</li>
               <li class="menu-item"><%= link_to "Log out", destroy_user_session_path, :method => 'delete' %></li>
