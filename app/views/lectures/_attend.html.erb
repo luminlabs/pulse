@@ -1,0 +1,60 @@
+<br><br>
+
+
+
+  <div class="row">    
+
+   <div class="large-3 pull-9 columns" id="sidebar">
+        
+      <ul class="side-nav">
+    
+      
+      </ul>
+
+      
+        
+    </div>
+
+    <div class="large-9 push-3 columns">
+      
+       <h3>Lecture: <%= @lecture.title %></h3>
+       <p>Program: WDI San Francisco</p>
+
+
+      
+         <h4> My Status: </h4>
+
+        <%= button_tag "Got it! \nReady for next topic.", :name => 'got_it_button',:class => 'button', :id=>"gotit_button" %><br><br>
+        <%= button_tag "Following you -\n keep on like this.", :name => 'on_track_button', :class => 'button',:id=>"following_button" %><br><br>
+        <%= button_tag 'Not getting it yet. Another angle maybe? ', :name => 'not_getting_button', :id=>"not_getting_button",:class =>'button' %><br><br>
+
+    </div>
+
+	  		
+</div>
+
+<script>
+   $(".button").click(function() {
+      $(".button").removeClass('selected')
+      $(this).addClass('selected')
+      $(".button").css('background-color','black');
+      $(".button").css({ opacity: 0.9 })
+      var button = $(this);
+      var name = event.target.name;
+      // var name = button.val(name);
+    
+      $.ajax({
+        type: 'POST',
+        url : "/update",
+        data : { notice : name },     
+        complete : function(data) {
+         button.css('background-color','red');
+         button.css({ opacity: 1 });
+        }
+      });
+
+      
+    });
+
+</script>
+	 
