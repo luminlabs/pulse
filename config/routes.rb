@@ -1,6 +1,8 @@
 Pulse::Application.routes.draw do
  
 
+  devise_for :instructors
+
   devise_for :users
 
   root :to => 'lectures#index'  

@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717183832) do
+ActiveRecord::Schema.define(:version => 20130718152422) do
+
+  create_table "instructors", :force => true do |t|
+    t.string   "name"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "instructors", ["email"], :name => "index_instructors_on_email", :unique => true
+  add_index "instructors", ["reset_password_token"], :name => "index_instructors_on_reset_password_token", :unique => true
 
   create_table "lectures", :force => true do |t|
     t.string   "title"
@@ -42,6 +63,11 @@ ActiveRecord::Schema.define(:version => 20130717183832) do
 
   add_index "models", ["email"], :name => "index_models_on_email", :unique => true
   add_index "models", ["reset_password_token"], :name => "index_models_on_reset_password_token", :unique => true
+
+  create_table "rosters", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
