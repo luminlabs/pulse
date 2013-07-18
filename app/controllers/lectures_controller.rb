@@ -37,8 +37,8 @@ class LecturesController < ApplicationController
   def destroy
     lecture = Lecture.find(params[:id])
 
-    lecture.rosters.each { | i |
-      i.destroy
+    lecture.rosters.each { | thisroster |
+      thisroster.destroy
     }
     lecture.delete
     redirect_to(lectures_path)
@@ -68,4 +68,21 @@ class LecturesController < ApplicationController
   def dashboard
      @lecture = Lecture.last
   end
+
+  def graphprep
+     vis = Rubyvis::Panel.new do 
+        width 150
+        height 150
+        bar do
+          data [1, 1.2, 1.7, 1.5, 0.7, 0.3]
+          width 20
+          height {|d| d * 80}
+          bottom(0)
+          left {index * 25}
+          vis.render()
+          vis.to_svg # Output final SVG
+        end
+      end
+    end
 end
+

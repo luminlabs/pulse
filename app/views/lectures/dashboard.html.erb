@@ -1,42 +1,27 @@
-<br><br>
+
 
   <div class="row">    
 
    <div class="large-3 pull-9 columns" id="sidebar">
         
-      <ul class="side-nav">
-        <h4> <%= @lecture.title => </h4>
+            <h4> <%= @lecture.title %> </h4>
+
 
           <li> <%= button_to('Edit Lecture', edit_lecture_path(@lecture), :method => :get, :class => "button black" ) %></li>
           <li><%= button_to('Delete Lecture', @lecture, :method => :delete, :confirm => 'Are you sure?', :class => "button black") %></li>
 
 	        
-      </ul>
-      
+    
         
     </div>
 
     <div class="large-9 push-3 columns">
       
        <h3><%= @lecture.title %></h3>
+       <%= puts @lecture.graphprep() %>
 
-
-      		<%=
-			   
-			   vis = Rubyvis::Panel.new do 
-			  width 150
-			  height 150
-			  bar do
-			    data [1, 1.2, 1.7, 1.5, 0.7, 0.3]
-			    width 20
-			    height {|d| d * 80}
-			    bottom(0)
-			    left {index * 25}
-			  end
-			end
-			vis.render()
-			puts vis.to_svg # Output final SVG
-            %>
+       			<h2> Hello! </h2>
+      		
     </div>
 
 	  		
