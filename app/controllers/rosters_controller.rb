@@ -1,7 +1,7 @@
 class RosterController < ApplicationController
 
- def new(Lecture lec)
-    @roster = Roster.new(@lecture)
+ def new()
+    
   end
   def create
     roster = Roster.create(params[:roster])
