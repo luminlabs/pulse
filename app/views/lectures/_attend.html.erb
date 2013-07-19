@@ -6,7 +6,7 @@
 
    <div class="large-3 pull-9 columns" id="sidebar">
         <h5>Lecture: <%= @lecture.title %></h5>
-       <p>Program: <%= @lecture.topics %></p>
+       <p>Program: <%= @lecture.program %></p>
       <ul class="side-nav">
             
             <%= button_to('Leave Lecture', lectures_path, :class=>:'button black', :method=>:get) %>
