@@ -27,9 +27,12 @@
       </ul>
     </div>
   </div>
-  
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+  <div class="row" id="alertbar">
+    <div class="large-12 columns">
+     <p class="notice" align-text="centered"><%= notice %></p>
+       <p class="alert" align-text="centered"><%= alert %></p>
+ </div>
+ </div>
 
 <%= yield %>
  <footer class="row">

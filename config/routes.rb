@@ -1,7 +1,7 @@
 Pulse::Application.routes.draw do
  
 
-  devise_for :instructors
+
 
   devise_for :users
 
@@ -9,6 +9,7 @@ Pulse::Application.routes.draw do
   get '/current', :controller => 'lectures', :action => 'show'
   get '/dashboard', :controller => 'lectures', :action => 'dashboard'
   post '/update', :controller => 'lectures', :action => 'updatestatus'
+  get '/profile', :controller => 'users', :action => 'edit'
   resources :lectures
 
 

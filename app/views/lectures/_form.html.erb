@@ -1,12 +1,12 @@
 
 <%= form_for @lecture do |f| %>
-  <%= f.label :title , :class => "form-element" %>:
-  <%= f.text_field :title, :autofocus => true, :class => "form-element" %>
+  <%= f.label :title  %>
+  <%= f.text_field :title, :autofocus => true%>
   
   <br>
 
-  <%= f.label :active , :class => "form-element" %>:
-  <%= f.check_box :active, :autofocus => true, :class => "form-element" %>
+  <%= f.label :program  %>
+  <%= f.text_field :program %>
   
   <br>
   <%= f.submit :class =>"button black" %>

@@ -12,6 +12,12 @@
  *= require foundation
  *= require_tree .
  */
+.inline form {display: inline; }
+
+label {
+	padding-right: 10px;
+}
+
 *{
 
 	font-family: "News706BT-RomanC",Georgia;
@@ -83,7 +89,10 @@ input {
 
 }
 
+.form-element {
+	display:inline;
 
+}
 
 
 

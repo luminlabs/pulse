@@ -8,29 +8,38 @@
 
    <div class="large-3 pull-9 columns" id="sidebar">
         
-
+   		<% if current_user.instructor? %>
       		<%= button_to('New Lecture', new_lecture_path, :class=>:'button black', :method=>:get) %>
-		         
-        
+		<% end %>
+		 <% if !current_user.instructor?  %>
+			<%= button_to('Edit Profile', edit_user_registration_path, :class=>:'button black', :method=>:get) %>
+		<% end %>
+
     </div>
 
 
     <div class="large-9 push-3 columns">
-		     
-		Active Lectures:
-		<ol>
-		<br>
-		<% @lectures.each do |lecture| %>
-		  <li>
-		    <ul>
-		     
-		      	<li><%= link_to(lecture.title, lecture) %></li>
-
-
-			 </ul>
-		  </li>
+		
+    	<% if current_user.instructor? %>
+      		<h2>Active Lectures:</h2>
 		<% end %>
-		</ol>
+		 <% if !current_user.instructor?  %>
+			<h2>Lectures available to join:</h2>
+		<% end %>
+
+		
+	
+		<br>  <ul>
+		<% @lectures.each do |lecture| %>
+	
+		     
+		      	<li><%= link_to(lecture.title, lecture ) %><br> Program: <%=lecture.program%> <br> 	Instructor: <%=lecture.instructor%></li>
+			
+			 <hr>
+
+		<% end %>
+			 </ul>
+	
 
     </div>
 

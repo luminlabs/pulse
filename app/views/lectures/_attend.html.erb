@@ -5,11 +5,12 @@
   <div class="row">    
 
    <div class="large-3 pull-9 columns" id="sidebar">
-        
+        <h5>Lecture: <%= @lecture.title %></h5>
+       <p>Program: <%= @lecture.topics %></p>
       <ul class="side-nav">
-           
+            
             <%= button_to('Leave Lecture', lectures_path, :class=>:'button black', :method=>:get) %>
-            <%= button_to('Edit Profile', edit_user_path, :class=>:'button black', :method=>:get) %>
+            <%= button_to('Edit Profile', edit_user_registration_path, :class=>:'button black', :method=>:get) %>
       
       </ul>
 
@@ -17,10 +18,9 @@
         
     </div>
 
-    <div class="large-9 push-3 columns">
+    <div class="large-6 push-3 columns">
       
-       <h3>Lecture: <%= @lecture.title %></h3>
-       <p>Program: <%= @lecture.program %></p>
+      
 
 
       

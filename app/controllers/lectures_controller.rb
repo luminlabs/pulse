@@ -18,10 +18,13 @@ class LecturesController < ApplicationController
     @lecture.notcount = 0
     @lecture.followingcount = 0 
     @lecture.goaheadcount = 0
-    redirect_to(lecture)
+    redirect_to(lectures_path)
   end
 
   def show
+    if params[:id].to_i > Lecture.count
+      redirect_to(lectures_path)
+    end
     @lecture = Lecture.find(params[:id])
     if current_user.instructor? 
       idlecount = 0
@@ -44,7 +47,7 @@ class LecturesController < ApplicationController
     if !current_user.instructor? 
 
         roster = Roster.find_or_create_by_user_id_and_lecture_id(user_id: current_user.id, lecture_id: @lecture.id)  
-        binding.pry 
+        # binding.pry 
 
     end      
 
@@ -66,7 +69,7 @@ class LecturesController < ApplicationController
   def update
     lecture = Lecture.find(params[:id])
     lecture.update_attributes(params[:lecture])
-    redirect_to(lecture)
+    redirect_to(lectures_path)
   end
   def destroy
     lecture = Lecture.find(params[:id])
