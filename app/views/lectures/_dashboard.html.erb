@@ -5,8 +5,7 @@
    <div class="large-3 pull-9 columns" id="sidebar">
         
         <h5>Lecture: <%= @lecture.title %> </h5>
-
-
+          <%= button_to('Lectures Index', lectures_path, :class=>:'button black', :method=>:get) %>
            <%= button_to('Edit Lecture', edit_lecture_path(@lecture), :method => :get, :class => "button black" ) %>
             <%= button_to('Delete Lecture', @lecture, :method => :delete, :confirm => 'Are you sure?', :class => "button black") %>
 

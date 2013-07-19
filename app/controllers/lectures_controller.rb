@@ -15,6 +15,7 @@ class LecturesController < ApplicationController
 
   def create
     @lecture = Lecture.create(params[:lecture])
+    @lecture.instructor = current_user.name
     @lecture.notcount = 0
     @lecture.followingcount = 0 
     @lecture.goaheadcount = 0
