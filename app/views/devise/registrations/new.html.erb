@@ -29,7 +29,7 @@
   <%= f.text_field :linkedin %></div>
 
   <div><%= f.submit "Sign up", :class => "button black"%></div>
-  <%= f.check_box :instructor, {:checked => params[:instructor]=="true", :hidden =>true} %>
+  <%= f.check_box :instructor, {:checked => params[:instructor].nil?, :hidden =>true} %>
 
 <% end %>
 </div>
