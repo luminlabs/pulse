@@ -23,9 +23,9 @@ class LecturesController < ApplicationController
   end
 
   def show
-    if params[:id].to_i > Lecture.count
-      redirect_to(lectures_path)
-    end
+    # if params[:id].to_i > Lecture.count
+    #   redirect_to(lectures_path)
+    # end
     @lecture = Lecture.find(params[:id])
     if current_user.instructor? 
       idlecount = 0
