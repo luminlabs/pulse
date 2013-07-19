@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do
 	gem 'sqlite3'
+	gem 'pry'
 end
 group :production do
 	gem 'pg'
@@ -14,6 +15,7 @@ end
 gem 'devise'
 gem 'rubyvis'
 gem 'googlecharts'
+gem 'rspec'
 
 # Gems used only for assets and not required
 # in production environments by default.

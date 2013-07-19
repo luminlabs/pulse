@@ -16,13 +16,14 @@
     </div>
 
     <div class="large-9 push-3 columns">
-      
-       <h3>Lecture: <%= @lecture.title %></h3>
-       <div graphcontainter> <img src=<%= googlegraph %> > </div>
+       <h3>Lecture: <%= @lecture.title %></h3><br>
+       <h5> <%= getstatus %> </h5>
+       <div graphcontainter> <img src=<%= googlegraph(getstatus) %> > </div>
 
-       <div>
-       <h5> Not Following </h5>     <h5> I'm With You </h5>      <h5> Got It! Move On </h5>
-       </div>
+      <ul class="inline-list ">
+        <br>
+    <li >&nbsp Not Following [<%= getstatus[0] %>]</li>  <li>&nbsp|&nbsp</li>   <li>I'm With You [<%= getstatus[1] %>]</li>  <li>|&nbsp&nbsp</li>   <li>  Got It! Move On [<%= getstatus[2] %>] </li>
+       </ul>
       		
     </div>
 

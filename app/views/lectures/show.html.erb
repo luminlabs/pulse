@@ -1,10 +1,10 @@
 
-<% if user_signed_in? %>
+<% if !current_user.instructor? %>
 	<%= render :partial => 'attend' %>
 <% end %>
-<% if instructor_signed_in? %>
+<% if current_user.instructor?  %>
 	<%= render :partial => 'dashboard' %>
 <% end %>
 
-<%= debug instructor_signed_in? %>
+
 

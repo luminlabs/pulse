@@ -3,23 +3,56 @@ class LecturesController < ApplicationController
     @lectures = Lecture.all
     current_user.rosters.each { | i |
     i.destroy
-    }
+  }
 
   end
   def new
     @lecture = Lecture.new
-    # @roster = Roster.new(@lecture)
+    @lecture.notcount = 0
+    @lecture.followingcount = 0 
+    @lecture.goaheadcount = 0
   end
-  def create
-    lecture = Lecture.create(params[:lecture])
 
+  def create
+    @lecture = Lecture.create(params[:lecture])
+    @lecture.notcount = 0
+    @lecture.followingcount = 0 
+    @lecture.goaheadcount = 0
     redirect_to(lecture)
   end
+
   def show
     @lecture = Lecture.find(params[:id])
-    roster = Roster.find_or_create_by_user_id_and_lecture_id(user_id: current_user.id, lecture_id: @lecture.id)
+    if current_user.instructor? 
+      idlecount = 0
+      
+      @lecture.notcount = 0
+      @lecture.followingcount = 0 
+      @lecture.goaheadcount = 0
 
+      @lecture.users.each do |user|
+        case user.currentstatus
+          when 0 then idlecount = idlecount + 1
+          when 1 then @lecture.notcount = @lecture.notcount + 1 
+          when 2 then @lecture.followingcount = @lecture.followingcount + 1
+          when 3 then @lecture.goaheadcount = @lecture.goaheadcount + 1
+      end
+     end
+    
+    end 
 
+    if !current_user.instructor? 
+
+        roster = Roster.find_or_create_by_user_id_and_lecture_id(user_id: current_user.id, lecture_id: @lecture.id)  
+        binding.pry 
+
+    end      
+
+    # <%= debug @lecture %>
+    
+     # @notcount = @lecture.users.where(:status => 1).count
+     # @followingcount = @lecture.users.where(:status => 2).count
+     # @goaheadcount = @lecture.users.where(:status => 3).count
 
     # roster = @lecture.rosters.build()
     # roster.user_id = current_user.id
@@ -55,24 +88,12 @@ class LecturesController < ApplicationController
 
   def updatestatus
      
-       current_user.status = statusbuttonmap[params[:notice]]
-
-        
-      # a.status = params[:notice]
-      # flash.now[:notice] = "Updated Status"
-
-     # format.json  { render :json => @user}
-     
+       current_user.currentstatus = statusbuttonmap[params[:notice]]
+       current_user.save
 
   end
 
-  def dashboard
-     @lecture = Lecture.last
-     @notcount = @lecture.stduents.where(:status => 1).count
-     @followingcount = @lecture.stduents.where(:status => 2).count
-     @goahead = @lecture.stduents.where(:status => 3).count
-    
-  end
+  
 
  
 end
