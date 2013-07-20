@@ -18,6 +18,7 @@ module LectureHelper
 
    	def getstatus
       @lecture = Lecture.find(params[:id])
+      idlecount=0
       @lecture.notcount = 0
       @lecture.followingcount = 0 
       @lecture.goaheadcount = 0
